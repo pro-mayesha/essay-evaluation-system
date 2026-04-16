@@ -1,0 +1,19 @@
+Final Segment Analysis (Test Split)
+===================================
+
+Grouping method:
+- Median split on normalized specificity and emotional_salience from merged_experiment_data.csv
+- specificity median: -0.267494
+- emotional_salience median: -0.454860
+
+Goal check: Does Model D improve more on high-salience essays?
+- High emotional salience delta QWK (D-A): 0.006193
+- Low emotional salience delta QWK (D-A): 0.014004
+
+Specificity split (delta QWK D-A):
+- High specificity: 0.003015
+- Low specificity: 0.019505
+
+Interpretation:
+- Positive delta QWK indicates Model D outperforms Model A on ordinal agreement in that segment.
+- Use CSV for full RMSE/MAE/Pearson deltas per segment.

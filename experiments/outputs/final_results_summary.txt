@@ -1,0 +1,28 @@
+Final Locked Results
+====================
+
+Locked feature setup for Model C/D:
+- deberta_pred + specificity + emotional_salience + personal_experience_salience
+
+Model A (single run):
+- QWK: 0.754523
+- RMSE: 0.603244
+- MAE: 0.448952
+- Pearson: 0.809909
+
+Model C (single run):
+- QWK: 0.754474
+- RMSE: 0.595598
+- MAE: 0.437959
+- Pearson: 0.812018
+
+Model D (5-seed aggregate):
+- Mean QWK: 0.763635 | Std QWK: 0.001050
+- Mean RMSE: 0.624907 | Std RMSE: 0.001241
+- Mean MAE: 0.479283 | Std MAE: 0.001093
+- Mean Pearson: 0.805281 | Std Pearson: 0.001165
+
+Notes:
+- Model A uses existing baseline output.
+- Model C and Model D use the locked reduced feature set.
+- Model D values are reported as mean/std across the 5 fixed seeds.

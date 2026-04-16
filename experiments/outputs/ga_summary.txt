@@ -1,0 +1,22 @@
+GA Fusion Optimization Summary
+=============================
+
+Objective: maximize validation QWK
+Rows: validation=2473, test=2473
+GA config: pop=80, generations=120, seed=42
+
+Best weights:
+  deberta_pred: 1.025046
+  concreteness: -0.047439
+  specificity: -0.013012
+  emotional_salience: -0.040453
+  personal_experience_salience: -0.009110
+  narrative_event_density: -0.004562
+
+Validation metrics:
+  QWK=0.770903, RMSE=0.627824, MAE=0.479408, r=0.810536
+Test metrics:
+  QWK=0.765043, RMSE=0.616051, MAE=0.472145, r=0.810242
+
+Saved: experiments/outputs/best_ga_weights.json
+Saved: experiments/outputs/ga_results.json

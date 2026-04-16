@@ -1,0 +1,22 @@
+Reduced-Feature Validation Summary
+=================================
+
+Dropped by design: concreteness, narrative_event_density
+Core kept: specificity, emotional_salience
+Optional variant: + personal_experience_salience
+
+Model C (test):
+  core -> qwk=0.754824, rmse=0.596127, mae=0.438093, pearson=0.811598
+  core_plus_personal -> qwk=0.754474, rmse=0.595598, mae=0.437959, pearson=0.812018
+
+Model D mean across 5 seeds (test):
+  core -> qwk=0.759450, rmse=0.620997, mae=0.475053, pearson=0.807311
+  core_plus_personal -> qwk=0.763635, rmse=0.624907, mae=0.479283, pearson=0.805281
+
+Model D stability (std across 5 seeds, test):
+  core -> qwk_std=0.002377, rmse_std=0.001224, mae_std=0.001844, pearson_std=0.000465
+  core_plus_personal -> qwk_std=0.001050, rmse_std=0.001241, mae_std=0.001093, pearson_std=0.001165
+
+Interpretation:
+- Prefer the configuration with higher QWK and lower seed std if the goal is ordinal agreement with stable behavior.
+- Keeping the optional personal feature is worthwhile only if it improves QWK without hurting stability.

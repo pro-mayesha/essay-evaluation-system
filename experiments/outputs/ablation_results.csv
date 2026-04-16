@@ -1,0 +1,13 @@
+model,config,features_used,validation_qwk,test_qwk,rmse,mae,pearson
+Model C,full,"deberta_pred,concreteness,specificity,emotional_salience,personal_experience_salience,narrative_event_density",0.7622755976250465,0.7542462528729764,0.5944679538441843,0.43731563410790575,0.8127721990794211
+Model D,full,"deberta_pred,concreteness,specificity,emotional_salience,personal_experience_salience,narrative_event_density",0.770902609006933,0.765043498646699,0.6160512424134248,0.4721447702398049,0.8102418182706136
+Model C,drop_concreteness,"deberta_pred,specificity,emotional_salience,personal_experience_salience,narrative_event_density",0.7603343935629276,0.7556643432421493,0.5951097711700334,0.43781959462905073,0.8123683965588291
+Model D,drop_concreteness,"deberta_pred,specificity,emotional_salience,personal_experience_salience,narrative_event_density",0.7712135254221446,0.7665204798819125,0.622369670650659,0.4770146948821218,0.8070803482636544
+Model C,drop_specificity,"deberta_pred,concreteness,emotional_salience,personal_experience_salience,narrative_event_density",0.7608770974970314,0.7513286389732658,0.5964414592455916,0.438519795853991,0.8114344247452641
+Model D,drop_specificity,"deberta_pred,concreteness,emotional_salience,personal_experience_salience,narrative_event_density",0.7718771133315033,0.7642098303610265,0.6263493697719931,0.4839215348122388,0.8032673103532596
+Model C,drop_emotional_salience,"deberta_pred,concreteness,specificity,personal_experience_salience,narrative_event_density",0.7624515881143799,0.7538862959417989,0.594687040538326,0.4375373236642828,0.8126205420606756
+Model D,drop_emotional_salience,"deberta_pred,concreteness,specificity,personal_experience_salience,narrative_event_density",0.7737732954967949,0.7641592312477186,0.6232305216060441,0.48166762554712134,0.806510931009385
+Model C,drop_personal_experience_salience,"deberta_pred,concreteness,specificity,emotional_salience,narrative_event_density",0.7594224059967858,0.7527608087351774,0.5949488334388038,0.437405811533263,0.8123907397624238
+Model D,drop_personal_experience_salience,"deberta_pred,concreteness,specificity,emotional_salience,narrative_event_density",0.7748624861734639,0.7649653128740811,0.6288585703845456,0.48770556753429295,0.8056820114982676
+Model C,drop_narrative_event_density,"deberta_pred,concreteness,specificity,emotional_salience,personal_experience_salience",0.7624515881143799,0.7547730642111223,0.595032210668821,0.4375852451867964,0.8123705652158495
+Model D,drop_narrative_event_density,"deberta_pred,concreteness,specificity,emotional_salience,personal_experience_salience",0.7720200132220381,0.7665759734498333,0.6118971316268215,0.46762739595255187,0.8111414125443722

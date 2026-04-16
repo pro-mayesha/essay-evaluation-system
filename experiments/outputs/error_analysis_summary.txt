@@ -1,0 +1,30 @@
+Error Analysis Summary (A vs C vs D on test split)
+===============================================
+
+Top-20 improved/worsened by Model D over Model A are saved to CSV.
+
+Mean raw heuristics:
+  [full_test]
+    concreteness_raw: 0.014670
+    specificity_raw: 0.010655
+    emotional_salience_raw: 0.002860
+    personal_experience_salience_raw: 0.024032
+    narrative_event_density_raw: 0.006416
+  [top20_improved_d_vs_a]
+    concreteness_raw: 0.011197
+    specificity_raw: 0.012750
+    emotional_salience_raw: 0.010311
+    personal_experience_salience_raw: 0.017706
+    narrative_event_density_raw: 0.005986
+  [top20_worsened_d_vs_a]
+    concreteness_raw: 0.008145
+    specificity_raw: 0.008254
+    emotional_salience_raw: 0.016960
+    personal_experience_salience_raw: 0.016520
+    narrative_event_density_raw: 0.006132
+
+Pattern notes (exploratory):
+- Check whether specificity_raw and personal_experience_salience_raw are higher in improved vs worsened groups.
+- Check whether emotional_salience_raw is elevated in worsened essays.
+
+Caveat: top-20 slices are small; treat as directional, not causal.

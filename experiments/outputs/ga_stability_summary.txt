@@ -1,0 +1,15 @@
+GA Stability Summary (5 seeds)
+=============================
+
+Seeds: [11, 22, 33, 44, 55]
+Fixed config: pop=80, generations=120, elite=8, mutation_rate=0.25, mutation_std=0.15
+
+Per-run metrics are saved in ga_stability_runs.csv.
+
+Metric mean ± std:
+  validation_qwk: 0.771894 ± 0.001826
+  test_qwk:       0.765376 ± 0.001404
+  validation_rmse:0.631956 ± 0.005947
+  test_rmse:      0.620719 ± 0.006116
+
+Stability note: GA appears stable across seeds (low variability in test QWK/RMSE).

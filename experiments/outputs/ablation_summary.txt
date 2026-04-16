@@ -1,0 +1,16 @@
+Ablation Summary
+================
+
+Delta test QWK vs full config by model:
+  [Model C] full_test_qwk=0.754246
+    drop_specificity: test_qwk=0.751329, delta_vs_full=-0.002918
+    drop_personal_experience_salience: test_qwk=0.752761, delta_vs_full=-0.001485
+    drop_emotional_salience: test_qwk=0.753886, delta_vs_full=-0.000360
+    drop_narrative_event_density: test_qwk=0.754773, delta_vs_full=0.000527
+    drop_concreteness: test_qwk=0.755664, delta_vs_full=0.001418
+  [Model D] full_test_qwk=0.765043
+    drop_emotional_salience: test_qwk=0.764159, delta_vs_full=-0.000884
+    drop_specificity: test_qwk=0.764210, delta_vs_full=-0.000834
+    drop_personal_experience_salience: test_qwk=0.764965, delta_vs_full=-0.000078
+    drop_concreteness: test_qwk=0.766520, delta_vs_full=0.001477
+    drop_narrative_event_density: test_qwk=0.766576, delta_vs_full=0.001532

@@ -1,0 +1,15 @@
+Final Model Comparison
+======================
+
+Source files:
+- results_asap_debug/test_eval_results/test_metrics.json (exists=True)
+- experiments/outputs/fusion_results.json (exists=True)
+- experiments/outputs/ga_results.json (exists=True)
+
+Notes:
+- test_metrics.json has no QWK field; Model A QWK taken from fusion_results.json (same test split as fusion experiments).
+
+Best model by QWK: Model D: DeBERTa + heuristic features + GA
+QWK=0.765043, RMSE=0.616051, MAE=0.472145, Pearson=0.810242
+
+All metrics are test-split unless noted in source JSON.

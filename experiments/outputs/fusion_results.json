@@ -1,0 +1,27 @@
+{
+  "data": {
+    "val_rows": 2473,
+    "test_rows": 2473
+  },
+  "normalization": "StandardScaler z-score on heuristic features only; fit on validation split, applied to validation and test.",
+  "models": {
+    "A_deberta_only": {
+      "rmse": 0.6032443511570389,
+      "mae": 0.4489521908943247,
+      "pearson_r": 0.8099091357063036,
+      "qwk": 0.754522594259706
+    },
+    "B_heuristics_only_linear_regression": {
+      "rmse": 0.9782629437530341,
+      "mae": 0.7758954335665236,
+      "pearson_r": 0.282968620474076,
+      "qwk": 0.0849272070738647
+    },
+    "C_deberta_plus_heuristics_linear_regression": {
+      "rmse": 0.5944679538441843,
+      "mae": 0.43731563410790575,
+      "pearson_r": 0.8127721990794211,
+      "qwk": 0.7542462528729764
+    }
+  }
+}

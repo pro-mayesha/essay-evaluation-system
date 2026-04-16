@@ -1,0 +1,15 @@
+{
+  "core": {
+    "best_seed_by_test_qwk": 22,
+    "deberta_pred": 1.0279020341339096,
+    "specificity": 0.02233629098909856,
+    "emotional_salience": -0.02817535282987648
+  },
+  "core_plus_personal": {
+    "best_seed_by_test_qwk": 55,
+    "deberta_pred": 1.02840127081159,
+    "specificity": 0.009935684147212777,
+    "emotional_salience": -0.02662172897228475,
+    "personal_experience_salience": -0.033985104475413454
+  }
+}
