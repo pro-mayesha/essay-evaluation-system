@@ -1,0 +1,7 @@
+config,model,features_used,test_qwk,test_rmse,test_mae,test_pearson
+core,Model C,"deberta_pred,specificity,emotional_salience",0.7548241690699228,0.5961274268984492,0.438092755383674,0.8115982574268679
+core,Model D (mean_5_seeds),"deberta_pred,specificity,emotional_salience",0.7594503636689455,0.620996817841089,0.4750533767457311,0.8073109750681559
+core,Model D (std_5_seeds),"deberta_pred,specificity,emotional_salience",0.0023772721757178593,0.0012237483616333244,0.0018443407351734335,0.0004652289729503692
+core_plus_personal,Model C,"deberta_pred,specificity,emotional_salience,personal_experience_salience",0.7544735388648085,0.595597533339061,0.43795937835462423,0.8120175789553106
+core_plus_personal,Model D (mean_5_seeds),"deberta_pred,specificity,emotional_salience,personal_experience_salience",0.7636352078287901,0.6249066455552853,0.47928300322413175,0.8052812648248182
+core_plus_personal,Model D (std_5_seeds),"deberta_pred,specificity,emotional_salience,personal_experience_salience",0.001050373597671276,0.0012409612536850667,0.0010934537728031464,0.0011653842828940185

@@ -1,0 +1,19 @@
+{
+  "objective": "maximize_validation_qwk",
+  "feature_order": [
+    "deberta_pred",
+    "concreteness",
+    "specificity",
+    "emotional_salience",
+    "personal_experience_salience",
+    "narrative_event_density"
+  ],
+  "weights": {
+    "deberta_pred": 1.025045528070429,
+    "concreteness": -0.04743851757292481,
+    "specificity": -0.013012205468113904,
+    "emotional_salience": -0.04045285339322996,
+    "personal_experience_salience": -0.009109846624947768,
+    "narrative_event_density": -0.004562492664003283
+  }
+}

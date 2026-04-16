@@ -1,0 +1,37 @@
+GA Weight Interpretation
+========================
+
+Source:
+- experiments/outputs/best_ga_weights.json
+
+1) Learned weight for each input feature
+- deberta_pred: 1.025046
+- concreteness: -0.047439
+- specificity: -0.013012
+- emotional_salience: -0.040453
+- personal_experience_salience: -0.009110
+- narrative_event_density: -0.004562
+
+2) Features sorted by absolute influence (largest -> smallest)
+- deberta_pred: |1.025046|
+- concreteness: |0.047439|
+- emotional_salience: |0.040453|
+- specificity: |0.013012|
+- personal_experience_salience: |0.009110|
+- narrative_event_density: |0.004562|
+
+3) Negative weights
+- Yes. All five heuristic features have negative weights.
+- Positive weight appears only on deberta_pred.
+
+4) Are these weights sensible for a human-centered AES interpretation?
+- Mostly yes for this experiment setup.
+- The model is strongly anchored on DeBERTa (weight ~1.03), which indicates DeBERTa carries nearly all predictive signal.
+- Heuristic weights are tiny in magnitude (about 1-5% of DeBERTa's scale after normalization), so they act as small corrections rather than primary drivers.
+- Negative heuristic signs suggest GA found that, on this validation split, higher heuristic values were often associated with slight downward adjustments when combined with DeBERTa.
+- This is plausible because these proxies are coarse and may overlap with signal DeBERTa already captures; GA may be compensating for residual bias, not rejecting human-centered factors globally.
+
+5) Plain-English interpretation
+- GA is relying almost entirely on DeBERTa and using the five heuristic features as very small penalty-style nudges.
+- Among heuristics, concreteness and emotional salience matter the most, but still much less than DeBERTa.
+- In short: this fusion behaves like "DeBERTa first, tiny heuristic correction second."

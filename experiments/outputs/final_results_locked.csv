@@ -1,0 +1,5 @@
+model,feature_setup,qwk,rmse,mae,pearson,metric_type
+Model A: DeBERTa only,deberta_pred,0.754522594259706,0.6032443511570389,0.4489521908943247,0.8099091357063036,single_run
+Model C: DeBERTa + reduced features,"deberta_pred,specificity,emotional_salience,personal_experience_salience",0.7544735388648085,0.595597533339061,0.4379593783546242,0.8120175789553106,single_run
+Model D: DeBERTa + reduced features + GA,"deberta_pred,specificity,emotional_salience,personal_experience_salience",0.7636352078287901,0.6249066455552853,0.4792830032241317,0.8052812648248182,mean_5_seeds
+Model D: DeBERTa + reduced features + GA,"deberta_pred,specificity,emotional_salience,personal_experience_salience",0.0010503735976712,0.001240961253685,0.0010934537728031,0.001165384282894,std_5_seeds

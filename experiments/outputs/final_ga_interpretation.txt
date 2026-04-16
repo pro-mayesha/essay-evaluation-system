@@ -1,0 +1,42 @@
+Final GA Weight Interpretation (Reduced Feature Setup)
+======================================================
+
+Source:
+- experiments/outputs/reduced_feature_validation/reduced_feature_best_ga_weights.json
+
+Locked final feature set:
+- deberta_pred
+- specificity
+- emotional_salience
+- personal_experience_salience
+
+Best weight vector (core_plus_personal, best seed by test QWK = 55):
+- deberta_pred: +1.028401
+- specificity: +0.009936
+- emotional_salience: -0.026622
+- personal_experience_salience: -0.033985
+
+Relative importance (absolute-weight share, sum(|w|)=1.098944):
+- deberta_pred: 93.58%
+- personal_experience_salience: 3.09%
+- emotional_salience: 2.42%
+- specificity: 0.90%
+
+Interpretation:
+1) Primary signal is still DeBERTa.
+   The GA relies overwhelmingly on deberta_pred (about 94% of absolute weight mass), so the fusion behaves as a calibrated adjustment layer on top of the neural baseline, not a replacement.
+
+2) personal_experience_salience now has meaningful but secondary influence.
+   Its weight magnitude is larger than both specificity and emotional_salience in this best run, so it is the strongest heuristic contributor in the reduced setup. It is still much smaller than DeBERTa, but non-trivial among heuristics.
+
+3) Signal combination pattern:
+   - Positive deberta_pred weight: preserves and slightly scales the base model score.
+   - Small positive specificity weight: slightly increases scores when writing is more specific.
+   - Negative emotional_salience weight: slightly down-adjusts highly emotional essays.
+   - Negative personal_experience_salience weight: slightly down-adjusts essays with strong personal-reference signals.
+
+4) Practical reading:
+   The GA is using heuristics as corrective nudges (small signed offsets) around the DeBERTa prediction. This improves ordinal alignment (QWK) while keeping model behavior dominated by the baseline.
+
+Note:
+- Signs and exact magnitudes can vary by seed, but this best-run vector is consistent with the stability results: small heuristic corrections around a dominant deberta_pred term.

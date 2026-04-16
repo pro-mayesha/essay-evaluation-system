@@ -1,0 +1,28 @@
+Stability Summary (5 seeds)
+===========================
+
+Seeds: [11, 22, 33, 44, 55]
+
+Model C mean ± std:
+  validation_qwk: 0.762276 ± 0.000000
+  validation_rmse: 0.605194 ± 0.000000
+  validation_mae: 0.449865 ± 0.000000
+  validation_pearson: 0.812858 ± 0.000000
+  test_qwk: 0.754246 ± 0.000000
+  test_rmse: 0.594468 ± 0.000000
+  test_mae: 0.437316 ± 0.000000
+  test_pearson: 0.812772 ± 0.000000
+
+Model D mean ± std:
+  validation_qwk: 0.771894 ± 0.001826
+  validation_rmse: 0.631956 ± 0.005947
+  validation_mae: 0.484476 ± 0.007870
+  validation_pearson: 0.806796 ± 0.003963
+  test_qwk: 0.765376 ± 0.001404
+  test_rmse: 0.620719 ± 0.006116
+  test_mae: 0.477356 ± 0.007802
+  test_pearson: 0.806420 ± 0.003989
+
+Stability note:
+- Model C is effectively deterministic in this setup (linear regression), so seed variability is near zero.
+- Model D varies with GA seed; observed std indicates low-to-moderate variability if small (<~0.01 QWK std).
