@@ -81,9 +81,11 @@ Use the **same wording** in your manuscript as in `CITATION.cff` so the paper ti
 }
 ```
 
-**Artifact (this repository):** include the URL and the **commit SHA** or **release tag** you used (e.g. `v1.0.0`), for example:
+**Artifact (this repository)—exact line for your manuscript** (same title and author as above; matches [`CITATION.cff`](CITATION.cff)):
 
-> Code and data artifacts: [https://github.com/pro-mayesha/rubriq-framework](https://github.com/pro-mayesha/rubriq-framework) (accessed *YYYY-MM-DD*, commit *full SHA or tag*).
+> Reference implementation and experiment artifacts: [https://github.com/pro-mayesha/rubriq-framework](https://github.com/pro-mayesha/rubriq-framework), release **v1.0.0**, commit **f421e58** (full SHA `f421e58ba67b7c3b27830298a3e393e92bb1ea65`).
+
+Ready-to-paste variants (LaTeX / plain text) live in [`ARTIFACT_CITATION.md`](ARTIFACT_CITATION.md).
 
 GitHub reads [`CITATION.cff`](CITATION.cff) for the **Cite this repository** button. After you have a DOI (publisher or Zenodo archive), add it under `preferred-citation` / `identifiers` in that file so the repo and PDF stay in sync.
 
