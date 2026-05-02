@@ -1,19 +1,19 @@
 # RubriQ Framework
 
-**Automated Essay Scoring with Availability Signals and Genetic Algorithms**
+**Automated Essay Scoring with Availability Signals and Genetic Algorithms: The RubriQ Framework**
 
-This repository holds the code and experiments for **RubriQ**: a hybrid automated essay scoring approach that combines transformer-based scoring, **availability** (document-level) signals, and a **genetic algorithm** to learn fusion weights over those signals.
+Official reference implementation and experiment artifacts for the paper above. **Canonical repository:** [github.com/pro-mayesha/rubriq-framework](https://github.com/pro-mayesha/rubriq-framework)
 
 ## Overview
 
-Instead of treating essays as plain text sequences only, RubriQ models essays as structured documents. It pairs DeBERTa-based prediction with human-interpretable availability features and uses a genetic algorithm to combine those sources for stronger agreement with human scores.
+Instead of treating essays as plain text sequences only, RubriQ models essays as structured documents. It pairs DeBERTa-based prediction with human-interpretable **availability** (document-level) signals and uses a **genetic algorithm** to learn fusion weights over those signals.
 
 ## Problem
 
 Many automated essay scorers:
 
 - Rely mainly on surface-level or sequence patterns  
-- Underuse signals such as concreteness, narrative structure, and other cues that human raters use when scores are *available* at the document level  
+- Underuse signals such as concreteness, narrative structure, and other cues human raters use when such information is *available* at the document level  
 
 That gap can produce scores that look numerically fine but are misaligned with how humans judge quality.
 
@@ -26,7 +26,7 @@ That gap can produce scores that look numerically fine but are misaligned with h
 
 ### 2. Availability signals
 
-Document-level features that reflect how writing *presents* to a rater (e.g. concreteness, specificity, tone, narrative density). These are the “availability” side of the framework: signals that are observable in the text and available for fusion with the neural model.
+Document-level features that reflect how writing *presents* to a rater (e.g. concreteness, specificity, tone, narrative density). These are fused with the neural model after extraction from essay text.
 
 ### 3. Genetic algorithm fusion
 
@@ -44,13 +44,12 @@ Document-level features that reflect how writing *presents* to a rater (e.g. con
 
 ## Datasets
 
-- **ASAP**: primary training and evaluation for essay scores  
-- **Persuade** (where used): additional discourse and writing patterns  
+- **ASAP** (`asap.csv`): primary training and evaluation pipeline in this repository  
+- **Persuade** (`persuade.csv`): included for reference / extensions; the scripted pipeline here is centered on ASAP + exported predictions (see Reproducibility)  
 
 ## Results (summary)
 
-- Improved consistency over a DeBERTa-only baseline in reported runs  
-- Trade-off: added components (features + GA) for interpretability and controlled fusion  
+Reported metrics and tables are stored under `experiments/outputs/` (CSV, JSON, summary text, figures). Large checkpoints and local training runs are excluded from git (see below).
 
 ## Why it matters
 
@@ -58,13 +57,43 @@ RubriQ targets more interpretable scoring, better potential for feedback, and al
 
 ## Repository layout
 
-- `train_asap.py` / `train_asap_ordinal.py` — DeBERTa training (regression / ordinal)  
-- `eval_asap.py` / `eval_asap_ordinal.py` — evaluation on the held-out split  
-- `experiments/` — feature extraction, GA optimization (`ga_optimize.py`), fusion (`fuse_scores.py`), ablations, validation, and result exports under `experiments/outputs/`  
+| Path | Role |
+|------|------|
+| `train_asap.py`, `train_asap_ordinal.py` | DeBERTa training (regression / ordinal) |
+| `eval_asap.py`, `eval_asap_ordinal.py` | Evaluation on the held-out split |
+| `experiments/` | Feature extraction, GA (`ga_optimize.py`), fusion (`fuse_scores.py`), validation scripts |
+| `experiments/outputs/` | Locked tables, summaries, and figures aligned with the paper’s experiments |
+| `VERSION` | Release-style version string; keep in sync with git tags when you mint releases |
+| `CITATION.cff` | Machine-readable citation metadata (GitHub **Cite this repository**) |
 
-## Citation
+## Citing this work
 
-If you use this software or the RubriQ framework, please cite the associated work (see your paper: *Automated Essay Scoring with Availability Signals and Genetic Algorithms: The RubriQ Framework*).
+Use the **same wording** in your manuscript as in `CITATION.cff` so the paper title and author match exactly.
+
+**Paper (recommended primary citation):**
+
+```bibtex
+@article{proma2026rubriq,
+  title   = {Automated Essay Scoring with Availability Signals and Genetic Algorithms: The RubriQ Framework},
+  author  = {Proma, Mayesha Maliha},
+  year    = {2026},
+  note    = {Add venue, volume, issue, and pages (or arXiv id) after publication.},
+}
+```
+
+**Artifact (this repository):** include the URL and the **commit SHA** or **release tag** you used (e.g. `v1.0.0`), for example:
+
+> Code and data artifacts: [https://github.com/pro-mayesha/rubriq-framework](https://github.com/pro-mayesha/rubriq-framework) (accessed *YYYY-MM-DD*, commit *full SHA or tag*).
+
+GitHub reads [`CITATION.cff`](CITATION.cff) for the **Cite this repository** button. After you have a DOI (publisher or Zenodo archive), add it under `preferred-citation` / `identifiers` in that file so the repo and PDF stay in sync.
+
+## Reproducibility (what is and is not on GitHub)
+
+**Included in git:** source code, `asap.csv`, `persuade.csv`, and committed outputs under `experiments/outputs/` (summaries, metrics, figures).
+
+**Not included (see `.gitignore`):** local training directories (`results_asap/`, `results_asap_debug/`, etc.), saved model folders (`asap_model/`), and weight file globs (`*.pt`, `*.bin`, …). Re-running the full pipeline requires training/evaluation locally first so scripts that read `results_asap_debug/...` exports can run.
+
+Suggested order: train → eval (writes prediction CSVs) → `experiments/` scripts → compare with `experiments/outputs/`.
 
 ## Next steps
 

@@ -1,0 +1,31 @@
+# RubriQ — citation metadata for GitHub ("Cite this repository") and manuscripts.
+# After publication: add DOI under identifiers (Zenodo or the publisher), and optional venue fields under preferred-citation.
+
+cff-version: 1.2.0
+title: "RubriQ Framework (reference implementation)"
+message: >-
+  If you use RubriQ or this software in research, please cite the article below.
+  To reference this repository specifically, include the URL and the version or commit hash you used.
+
+authors:
+  - family-names: Proma
+    given-names: Mayesha Maliha
+
+version: 1.0.0
+date-released: "2026-05-02"
+license: MIT
+repository-code: "https://github.com/pro-mayesha/rubriq-framework"
+url: "https://github.com/pro-mayesha/rubriq-framework"
+
+identifiers:
+  - type: url
+    description: Canonical repository URL for artifact citation
+    value: "https://github.com/pro-mayesha/rubriq-framework"
+
+preferred-citation:
+  type: article
+  title: "Automated Essay Scoring with Availability Signals and Genetic Algorithms: The RubriQ Framework"
+  authors:
+    - family-names: Proma
+      given-names: Mayesha Maliha
+  year: 2026
