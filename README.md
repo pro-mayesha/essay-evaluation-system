@@ -1,67 +1,73 @@
-# Essay Evaluation System
+# RubriQ Framework
+
+**Automated Essay Scoring with Availability Signals and Genetic Algorithms**
+
+This repository holds the code and experiments for **RubriQ**: a hybrid automated essay scoring approach that combines transformer-based scoring, **availability** (document-level) signals, and a **genetic algorithm** to learn fusion weights over those signals.
 
 ## Overview
-This project builds an advanced essay evaluation system that goes beyond treating essays as plain text.
 
-Instead of relying only on sequence-based scoring, the system analyzes essays as structured documents. It combines transformer-based modeling with human-inspired features to better capture quality, clarity, and narrative strength.
+Instead of treating essays as plain text sequences only, RubriQ models essays as structured documents. It pairs DeBERTa-based prediction with human-interpretable availability features and uses a genetic algorithm to combine those sources for stronger agreement with human scores.
 
 ## Problem
-Most automated essay scoring systems:
-- Treat essays as simple text sequences  
-- Focus mainly on surface-level patterns  
-- Miss deeper signals like storytelling, specificity, and structure  
 
-This leads to scores that may be numerically accurate but not truly aligned with human judgment.
+Many automated essay scorers:
 
-## Approach
-We propose a hybrid system that combines:
+- Rely mainly on surface-level or sequence patterns  
+- Underuse signals such as concreteness, narrative structure, and other cues that human raters use when scores are *available* at the document level  
+
+That gap can produce scores that look numerically fine but are misaligned with how humans judge quality.
+
+## Approach (RubriQ)
 
 ### 1. Transformer-based scoring
+
 - Model: DeBERTa-v3  
-- Trained on essay datasets to predict holistic scores  
+- Trained to predict holistic (or ordinal) essay scores on benchmark data  
 
-### 2. Document-level features
-Inspired by how humans evaluate writing:
-- Concreteness  
-- Specificity  
-- Emotional tone  
-- Personal experience  
-- Narrative event density  
+### 2. Availability signals
 
-These features capture deeper qualities of writing beyond grammar or length.
+Document-level features that reflect how writing *presents* to a rater (e.g. concreteness, specificity, tone, narrative density). These are the “availability” side of the framework: signals that are observable in the text and available for fusion with the neural model.
 
-### 3. Genetic Algorithm (GA) fusion
-- Combines model predictions and engineered features  
-- Learns optimal weights for each signal  
-- Improves overall scoring performance and robustness  
+### 3. Genetic algorithm fusion
+
+- Joins model predictions and engineered features  
+- Searches for weights that improve agreement metrics (e.g. QWK)  
+- Supports ablation and stability analysis in `experiments/`  
+
+### Training defaults (DeBERTa path)
+
+- Optimizer: AdamW (`adamw_torch`)  
+- Learning rate: 5e-6  
+- Batch size: 2 (per device train/eval)  
+- Epochs: 3  
+- Weight decay: 0.01  
 
 ## Datasets
-- ASAP: used for training and evaluation of essay scores  
-- Persuade: used to capture discourse structure and writing patterns  
 
-## Results
-- Improved consistency over baseline transformer model  
-- Better alignment with human-like evaluation signals  
-- Trade-off: slight increase in complexity for improved interpretability  
+- **ASAP**: primary training and evaluation for essay scores  
+- **Persuade** (where used): additional discourse and writing patterns  
 
-## Why this matters
-This system moves toward:
-- More interpretable AI scoring  
-- Better feedback for students  
-- Stronger alignment with real evaluation criteria  
+## Results (summary)
 
-It can be extended to:
-- Essay feedback systems  
-- Admission support tools  
-- Educational platforms  
+- Improved consistency over a DeBERTa-only baseline in reported runs  
+- Trade-off: added components (features + GA) for interpretability and controlled fusion  
 
-## Project Structure
-- `models/` → transformer model and training  
-- `features/` → document-level feature extraction  
-- `ga/` → genetic algorithm fusion logic  
-- `data/` → dataset processing (ASAP, Persuade)  
+## Why it matters
 
-## Next Steps
-- Improve feature extraction using NLP models (e.g., SBERT)  
-- Expand evaluation across multiple prompts  
-- Integrate feedback generation alongside scoring  
+RubriQ targets more interpretable scoring, better potential for feedback, and alignment with criteria human raters use—suitable for extensions in feedback systems, admissions support, and educational platforms.
+
+## Repository layout
+
+- `train_asap.py` / `train_asap_ordinal.py` — DeBERTa training (regression / ordinal)  
+- `eval_asap.py` / `eval_asap_ordinal.py` — evaluation on the held-out split  
+- `experiments/` — feature extraction, GA optimization (`ga_optimize.py`), fusion (`fuse_scores.py`), ablations, validation, and result exports under `experiments/outputs/`  
+
+## Citation
+
+If you use this software or the RubriQ framework, please cite the associated work (see your paper: *Automated Essay Scoring with Availability Signals and Genetic Algorithms: The RubriQ Framework*).
+
+## Next steps
+
+- Richer feature extractors (e.g. sentence encoders)  
+- Broader prompt sets and cross-prompt evaluation  
+- Joint score + feedback generation  

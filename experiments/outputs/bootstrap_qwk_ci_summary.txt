@@ -1,0 +1,14 @@
+Bootstrap QWK Confidence Intervals (Locked Setup)
+=================================================
+
+Rows: test=2473
+Bootstrap: n_iterations=1000, ci=95, seed=42
+
+A (Baseline): point_qwk=0.754523, bootstrap_mean=0.754403, 95% CI=[0.737867, 0.769380]
+C (+Avail): point_qwk=0.754474, bootstrap_mean=0.754308, 95% CI=[0.737052, 0.769682]
+D (+Avail+GA): point_qwk=0.765173, bootstrap_mean=0.765094, 95% CI=[0.747832, 0.780078]
+
+Pairwise bootstrap differences (QWK_left - QWK_right):
+D-A: mean_diff=0.010692, 95% CI=[0.002356, 0.019287], significant=YES
+D-C: mean_diff=0.010786, 95% CI=[0.001229, 0.021622], significant=YES
+C-A: mean_diff=-0.000094, 95% CI=[-0.006756, 0.005788], significant=NO
