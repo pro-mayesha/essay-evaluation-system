@@ -1,9 +1,9 @@
 # Manuscript snippets (RubriQ artifact)
 
-Use the **same** article title and author as in `CITATION.cff` and the README.
+Use the **same** article title and authors as in `CITATION.cff` and the README.
 
 - **Title:** Automated Essay Scoring with Availability Signals and Genetic Algorithms: The RubriQ Framework  
-- **Author:** Mayesha Maliha Proma  
+- **Authors:** Mayesha Maliha Proma; Payel Jannat Maliha; Pasandi Peiris; Parag Kulkarni  
 
 ## One line (code / data availability)
 
@@ -19,7 +19,7 @@ Reference implementation and experiment artifacts: \url{https://github.com/pro-m
 
 ```bibtex
 @misc{proma2026rubriq_code,
-  author = {Proma, Mayesha Maliha},
+  author = {Proma, Mayesha Maliha and Maliha, Payel Jannat and Peiris, Pasandi and Kulkarni, Parag},
   title  = {{RubriQ Framework}: reference implementation and experiment artifacts},
   year   = {2026},
   url    = {https://github.com/pro-mayesha/rubriq-framework},

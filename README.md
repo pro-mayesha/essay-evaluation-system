@@ -68,20 +68,20 @@ RubriQ targets more interpretable scoring, better potential for feedback, and al
 
 ## Citing this work
 
-Use the **same wording** in your manuscript as in `CITATION.cff` so the paper title and author match exactly.
+Use the **same wording** in your manuscript as in `CITATION.cff` so the paper title and authors match exactly.
 
 **Paper (recommended primary citation):**
 
 ```bibtex
 @article{proma2026rubriq,
   title   = {Automated Essay Scoring with Availability Signals and Genetic Algorithms: The RubriQ Framework},
-  author  = {Proma, Mayesha Maliha},
+  author  = {Proma, Mayesha Maliha and Maliha, Payel Jannat and Peiris, Pasandi and Kulkarni, Parag},
   year    = {2026},
   note    = {Add venue, volume, issue, and pages (or arXiv id) after publication.},
 }
 ```
 
-**Artifact (this repository)—exact line for your manuscript** (same title and author as above; matches [`CITATION.cff`](CITATION.cff)):
+**Artifact (this repository)—exact line for your manuscript** (same paper title as above; author list in [`CITATION.cff`](CITATION.cff)):
 
 > Reference implementation and experiment artifacts: [https://github.com/pro-mayesha/rubriq-framework](https://github.com/pro-mayesha/rubriq-framework), release **v1.0.0**, commit **f421e58** (full SHA `f421e58ba67b7c3b27830298a3e393e92bb1ea65`).
 

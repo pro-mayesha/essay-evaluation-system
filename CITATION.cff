@@ -10,6 +10,20 @@ message: >-
 authors:
   - family-names: Proma
     given-names: Mayesha Maliha
+    affiliation: "The Abroad Company, Japan"
+    email: proma@abroad.company
+  - family-names: Maliha
+    given-names: Payel Jannat
+    affiliation: "Tokyo International University, Japan"
+    email: payeljannatmaliha@gmail.com
+  - family-names: Peiris
+    given-names: Pasandi
+    affiliation: "Tokyo International University, Japan"
+    email: s23224451@al.tiu.ac.jp
+  - family-names: Kulkarni
+    given-names: Parag
+    affiliation: "Tokyo International University, Japan"
+    email: pkulkarn@tiu.ac.jp
 
 version: 1.0.0
 date-released: "2026-05-02"
@@ -28,4 +42,18 @@ preferred-citation:
   authors:
     - family-names: Proma
       given-names: Mayesha Maliha
+      affiliation: "The Abroad Company, Japan"
+      email: proma@abroad.company
+    - family-names: Maliha
+      given-names: Payel Jannat
+      affiliation: "Tokyo International University, Japan"
+      email: payeljannatmaliha@gmail.com
+    - family-names: Peiris
+      given-names: Pasandi
+      affiliation: "Tokyo International University, Japan"
+      email: s23224451@al.tiu.ac.jp
+    - family-names: Kulkarni
+      given-names: Parag
+      affiliation: "Tokyo International University, Japan"
+      email: pkulkarn@tiu.ac.jp
   year: 2026
